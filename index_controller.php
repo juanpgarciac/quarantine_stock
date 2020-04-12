@@ -20,3 +20,16 @@
 		"</td>":"").
 		"</tr>";
 	}
+	$product_stock_rows = [];
+	$query = "select product.name,product.presentation,product.unit,stock.product_id,stock.amount,date(stock.date) as date,stock.observation from product inner join stock on product.id = stock.product_id  order by stock.date desc,stock.id desc limit 50; ";
+	$result = mysqli_query($connection,$query);
+	// <tr><th>Product ID</th><th>Product</th><th>Adjustment</th><th>Date</th><th>Observation</th></tr>
+	while($row = mysqli_fetch_assoc($result)){
+		$product_stock[] = $row;
+		$product_stock_rows[] = "<tr><td>{$row['product_id']}</td>".
+		"<td>{$row['name']} ({$row['presentation']} {$row['unit']})</td>".
+		"<td>{$row['amount']} </td>".
+		"<td>{$row['date']} </td>".
+		"<td>{$row['observation']} </td>".
+		"</tr>";
+	}

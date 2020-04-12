@@ -21,6 +21,8 @@ include "index_controller.php";
 		<?php include 'views/addproduct.php';  ?>
 		<?php include 'views/updatestock.php'; ?>
 		<?php include 'views/listproduct.php'; ?>
+		<?php if(!$print)include 'views/liststock.php'; ?>
+
 	</body>
 	<script src="assets/app.js"></script>
 </html>

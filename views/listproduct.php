@@ -25,13 +25,14 @@
         </tbody>
     </table>
     <?php if(!$print){ ?>
-    <br>
-    <button onclick="window.location.href = 'export_print.php?print'" >Print list</button>
-    <button onclick="window.location.href = 'export_csv.php'" >Export to CSV</button>
-    <?php }?>
+
     <form id="delete_product_form" action="controller.php" method="GET">
         <input type="hidden" name="f" value="delete_product" id="delete_controller">
         <input type="hidden" name="product_id" value="" id="product_delete_id" >
     </form>
     </section>
+    <br>
+    <button onclick="window.location.href = 'export_print.php?print'" >Print list</button>
+    <button onclick="window.location.href = 'export_csv.php'" >Export to CSV</button>
+    <?php }?>
 </div>
