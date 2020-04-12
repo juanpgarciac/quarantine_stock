@@ -30,6 +30,12 @@ include "index_controller.php";
 				font-weight:bold;
 				color:<?php echo $debug_color?>
 			}
+			table td.in{
+				background: #bbffb3;
+			}
+			table td.out{
+				background: #fcd9e0;
+			}
 		</style>
 	</head>
 	<body style="max-width: 800px;">
