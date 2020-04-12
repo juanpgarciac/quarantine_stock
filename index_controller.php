@@ -1,4 +1,5 @@
 <?php 
+	$debug_color = !env('DEBUG')?'red':'blue';
 	$print = isset($_GET['print']);
 	$query = "select * from stock_availibility;";
 	$result = mysqli_query($connection,$query);
