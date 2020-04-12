@@ -214,13 +214,14 @@ var Select = function(target, settings) {
 		var self = this;
 
 		this.options.filter(function(li) {
-			if(li.innerHTML.substring(0, self.filter.value.length).toLowerCase() == self.filter.value.toLowerCase()) {
+			if(li.innerHTML.toLowerCase().removeAccents().indexOf(self.filter.value.toLowerCase().removeAccents())>-1) {
+			//if(li.innerHTML.substring(0, self.filter.value.length).toLowerCase() == self.filter.value.toLowerCase()) {
 				li.style.display = 'block';
 			} else {
 				li.style.display = 'none';
 			}
 		});
-		window.afterFilter(self.filter.value);//this was added 
+		window.afterFilter(self.filter.value,self.filter.value);//this was added 
 		//TODO I would like to do it with a dispatch Event
 	};
 
@@ -234,7 +235,7 @@ var Select = function(target, settings) {
 		this.clearFilter();
 
 		setTimeout(this.positionList.bind(this), 200);
-		window.afterFilter(this.display.innerHTML.split(' (')[0]);//this was added
+		window.afterFilter(this.display.innerHTML.split(' (')[0],this.display.innerHTML);//this was added
 		//TODO I would like to do it with a dispatch Event
 	};
 

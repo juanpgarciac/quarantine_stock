@@ -1,11 +1,22 @@
 var mySelect;
 var LightTableFilter;
-window.afterFilter = function (text){
+String.prototype.removeAccents = function(){
+    return this
+			.replace(/[áàãâä]/gi,"a")
+			.replace(/[éè¨ê]/gi,"e")
+			.replace(/[íìïî]/gi,"i")
+			.replace(/[óòöôõ]/gi,"o")
+			.replace(/[úùüû]/gi, "u")
+			.replace(/[ç]/gi, "c")
+			.replace(/[ñ]/gi, "n")
+			.replace(/[^a-zA-Z0-9]/g," ");
+   }
+window.afterFilter = function (name,fullname){
     //console.log(text);
-    table_filter.value = text;
-    LightTableFilter.filter();    
+    table_filter.value = name;
+    LightTableFilter.filter(); 
+    product_name_span.innerHTML = fullname;
 };
-
 (function(document) {
     'use strict';
 
@@ -26,7 +37,7 @@ window.afterFilter = function (text){
         }
 
         function _filter(row) {
-            var text = row?row.textContent.toLowerCase():'', val = _input.value.toLowerCase();
+            var text = row?row.textContent.toLowerCase().removeAccents():'', val = _input.value.toLowerCase().removeAccents();
             row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
         }
 

@@ -12,8 +12,15 @@
 		if(!$print){
 			$class= ($row['available']>1)?'in':'out';
 		}
+		$left = '';
+		if($row['available']>0){
+			$left = $row['available'].' left';
+		}else{
+			$left = 'out';
+		}
+		
 		$products[] = $row;
-		$product_select[] = "<option value=\"{$row['id']}\">{$row['name']} ({$row['presentation']} {$row['unit']})</option>";
+		$product_select[] = "<option value=\"{$row['id']}\">{$row['name']} ({$row['presentation']} {$row['unit']}) < {$left} </option>";
 		$product_rows[] =
 		"<tr>".
 		"<td>{$row['id']}</td>".

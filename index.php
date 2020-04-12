@@ -8,7 +8,7 @@ include "index_controller.php";
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="assets/app.css">
 		<link rel="stylesheet" href="assets/select.min.css">
-		<script src="assets/select.js"></script>
+		
 		<style>
 			.select{
 				max-width: 100% !important;
@@ -49,6 +49,7 @@ include "index_controller.php";
 		<?php include 'views/updatestock.php'; ?>
 		<?php include 'views/listproduct.php'; ?>
 		<?php if(!$print)include 'views/liststock.php'; ?>
+		<script src="assets/select.js"></script>
 		<script src="assets/app.js"></script>
 	</body>
 	
