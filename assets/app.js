@@ -1,18 +1,22 @@
-window.onload=function(){
-   
-    
+var mySelect;
+var LightTableFilter;
+window.afterFilter = function (text){
+    //console.log(text);
+    table_filter.value = text;
+    LightTableFilter.filter();    
 };
+
 (function(document) {
     'use strict';
 
-    var mySelect = new Select('#filter');
-    
-    var LightTableFilter = (function(Arr) {
+    mySelect = new Select('#filter');
+
+    LightTableFilter = (function(Arr) {
 
         var _input;
 
         function _onInputEvent(e) {
-            _input = e.target;
+            _input = e?e.target:document.getElementById('table_filter');
             var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
             Arr.forEach.call(tables, function(table) {
                 Arr.forEach.call(table.tBodies, function(tbody) {
@@ -22,7 +26,7 @@ window.onload=function(){
         }
 
         function _filter(row) {
-            var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+            var text = row?row.textContent.toLowerCase():'', val = _input.value.toLowerCase();
             row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
         }
 
@@ -32,6 +36,9 @@ window.onload=function(){
                 Arr.forEach.call(inputs, function(input) {
                     input.oninput = _onInputEvent;
                 });
+            },
+            filter: function(){
+                _onInputEvent(null);
             }
         };
     })(Array.prototype);
