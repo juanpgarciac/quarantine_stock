@@ -37,7 +37,7 @@ window.afterFilter = function (text){
                     input.oninput = _onInputEvent;
                 });
             },
-            filter: function(){
+            filter: function(){ //this was added. 
                 _onInputEvent(null);
             }
         };

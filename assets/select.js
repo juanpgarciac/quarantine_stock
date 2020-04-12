@@ -220,7 +220,8 @@ var Select = function(target, settings) {
 				li.style.display = 'none';
 			}
 		});
-		window.afterFilter(self.filter.value);
+		window.afterFilter(self.filter.value);//this was added 
+		//TODO I would like to do it with a dispatch Event
 	};
 
 	this.handleOptionClick = function(e) {
@@ -233,7 +234,8 @@ var Select = function(target, settings) {
 		this.clearFilter();
 
 		setTimeout(this.positionList.bind(this), 200);
-		window.afterFilter(this.display.innerHTML.split(' (')[0]);
+		window.afterFilter(this.display.innerHTML.split(' (')[0]);//this was added
+		//TODO I would like to do it with a dispatch Event
 	};
 
 	this.handleClickOff = function(e) {

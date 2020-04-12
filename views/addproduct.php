@@ -16,6 +16,7 @@
 						</select>
 					</td>
 					<td>
+						<!-- This is the harcoded categories select, you can improve it with a table or something else -->
 						<select name="category" id="product_category" require>
 							<option value="Bebidas">Bebidas</option>
 							<option value="Carbohidratos">Carbohidratos</option>
