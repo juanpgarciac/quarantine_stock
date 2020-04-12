@@ -10,12 +10,14 @@ function add_product(){
     $category = filter_input(INPUT_GET,'category');
     global $connection;
     try {
-       $query = "insert into product(name,presentation,unit,category) values('$name','$presentation','$unit','$category');";
+        $query = "insert into product(name,presentation,unit,category) values('$name','$presentation','$unit','$category');";
         $r = mysqli_query($connection,$query);
-        if($r)
-            header('Location:index.php?msg=success');
-        else
-            var_dump($r,$query); 
+        $product_id = mysqli_insert_id($connection);
+        update_stock($product_id,filter_input(INPUT_GET,'initial_stock'));
+        // if($r)
+        //     header('Location:index.php?msg=success');
+        // else
+        //     var_dump($r,$query); 
     } catch (\Throwable $th) {
         var_dump($th);
         //header('Location:index.php?msg=success');
@@ -63,11 +65,15 @@ function delete_product(){
     }
 }
 
-function update_stock(){
-    $product_id = filter_input(INPUT_GET,'product_id');
-    $amount = filter_input(INPUT_GET,'amount');
-    $date = filter_input(INPUT_GET,'date')?"'".filter_input(INPUT_GET,'date')."'":'now()';
-    $observation = filter_input(INPUT_GET,'observation');
+function update_stock($product_id = null,$amount = 0,$date = 'now()',$observation = 'Initial stock'){
+    $product_id = $product_id??filter_input(INPUT_GET,'product_id');
+    $amount = filter_input(INPUT_GET,'amount')??$amount;
+    $date = filter_input(INPUT_GET,'date')?"'".filter_input(INPUT_GET,'date')."'":$date;
+    $observation = filter_input(INPUT_GET,'observation')??$observation;
+    $type = filter_input(INPUT_GET,'type')??1;
+
+    $amount *= (int)$type;
+    //dd($_GET,$amount);
     global $connection;
     try {
        $query = "insert into stock(product_id,amount,date,observation) values($product_id,'$amount',$date,'$observation');";

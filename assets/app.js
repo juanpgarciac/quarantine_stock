@@ -59,12 +59,16 @@ function edit_product(id,name,presentation,unit,category){
     product_unit.value = unit;
     product_category.value = category;
     product_controller.value = "update_product";
-    product_h2.innerHTML = "Update product: "+name+" "+presentation+" "+unit;
+    product_h2.innerHTML = "Update product: "+name+" "+presentation+" "+unit;    
+    initial_stock.disabled = "disabled";
+    initial_stock.value="0.00";
 }
 function reset_product(){
     product_h2.innerHTML = "Add product";
     product_id.value = null;
-    product_controller.value = "add_product";
+    product_controller.value = "add_product";    
+    initial_stock.disabled = null;
+    initial_stock.value="0.00";
 }
 function delete_product(id,name){
     if(confirm('Delete product '+id+' -> ' +name+' ?')){

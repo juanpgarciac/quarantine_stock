@@ -16,10 +16,11 @@ include "index_controller.php";
 		</style>
 	</head>
 	<body style="max-width: 800px;">
-		<pre style="color:<?php echo $db == 'inventario_cuarentena'?'red':'blue';?>">Usando DB <?php echo $db; ?></pre>
-		<?php include 'views/addproduct_view.php';  ?>
-		<?php include 'views/updatestock_view.php'; ?>
-		<?php include 'views/listproduct_view.php'; ?>
+			
+		<pre style="color:<?php echo !getenv('DEBUG')?'red':'blue';?>">You are in <?php echo getenv('DEBUG')?'testing':'production';?> environment</pre>
+		<?php include 'views/addproduct.php';  ?>
+		<?php include 'views/updatestock.php'; ?>
+		<?php include 'views/listproduct.php'; ?>
 	</body>
 	<script src="assets/app.js"></script>
 </html>

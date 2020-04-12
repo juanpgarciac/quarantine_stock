@@ -1,5 +1,5 @@
 <hr>
-<h2>List products (stock availibility)</h2>
+<h2>Products list (stock availibility)</h2>
 <div >
     <input id="table_filter" type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
     <section class="container" style="max-height: 250px;overflow-y: auto;">

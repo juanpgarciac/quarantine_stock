@@ -1,9 +1,10 @@
 <?php 
 
-$query = "select * from stock_availibility;";
+	$query = "select * from stock_availibility;";
 	$result = mysqli_query($connection,$query);
 	$product = [];
 	$product_select = [];
+	$product_rows = [];
 	while($row = mysqli_fetch_assoc($result)){
 		$product[] = $row;
 		$product_select[] = "<option value=\"{$row['id']}\">{$row['name']} ({$row['presentation']} {$row['unit']})</option>";
