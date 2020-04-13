@@ -5,10 +5,10 @@
 			<table>
 				<tr><th>Name</th><th>Presentation</th><th>Unit</th><th>Category</th><th>Initial stock</th></tr>
 				<tr>
-					<td><input type="text" name="name" placeholder="the product name" id="product_name" require></td>
-					<td><input type="number" name="presentation" value="1" id="product_presentation" require></td>
+					<td><input type="text" name="name" placeholder="the product name" id="product_name" required></td>
+					<td><input type="number" name="presentation" value="1" id="product_presentation" required></td>
 					<td>
-						<select name="unit" id="product_unit" require>
+						<select name="unit" id="product_unit" required>
 							<option value="und">und</option>
 							<option value="gr">gr</option>					
 							<option value="Kg">Kg</option>
@@ -18,7 +18,7 @@
 					</td>
 					<td>
 						<!-- This is the harcoded categories select, you can improve it with a table or something else -->
-						<select name="category" id="product_category" require>
+						<select name="category" id="product_category" required>
 							<option value="Bebidas">Bebidas</option>
 							<option value="Carbohidratos">Carbohidratos</option>
 							<option value="Chucherias">Chucherias</option>

@@ -25,7 +25,12 @@
 		"<tr>".
 		"<td>{$row['id']}</td>".
 		"<td><a href=\"javascript:edit_product({$row['id']},'{$row['name']}','{$row['presentation']}','{$row['unit']}','{$row['category']}');\">{$row['name']}</a></td>".
-		"<td>{$row['presentation']}</td><td>{$row['unit']}</td><td>{$row['category']}</td><td class=\"$class\">{$row['available']}</td>".
+		"<td>{$row['presentation']}</td>".
+		"<td>{$row['unit']}</td>".
+		"<td>{$row['category']}</td>".
+		"<td class=\"$class\">
+		<input  type=\"hidden\" value=\"{$row['available']}\" name=\"current_stock[{$row['id']}]\" />
+		<input  type=\"number\" min=\"0\" step=\"0.1\" value=\"{$row['available']}\" name=\"new_stock[{$row['id']}]\"/></td>".
 		(!$print?"<td>". 
 		"<a href=\"javascript:edit_product({$row['id']},'{$row['name']}','{$row['presentation']}','{$row['unit']}','{$row['category']}');\">Edit</a>&nbsp;|&nbsp;".
 		"<a href=\"javascript:delete_product({$row['id']},'{$row['name']}');\">Delete</a>".

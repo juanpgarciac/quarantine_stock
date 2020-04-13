@@ -1,4 +1,3 @@
-var mySelect;
 var LightTableFilter;
 String.prototype.removeAccents = function(){
     return this
@@ -11,16 +10,10 @@ String.prototype.removeAccents = function(){
 			.replace(/[ñ]/gi, "n")
 			.replace(/[^a-zA-Z0-9]/g," ");
    }
-window.afterFilter = function (name,fullname){
-    //console.log(text);
-    table_filter.value = name;
-    LightTableFilter.filter(); 
-    product_name_span.innerHTML = fullname;
-};
 (function(document) {
     'use strict';
 
-    mySelect = new Select('#filter');
+    //mySelect = new Select('#filter');
 
     LightTableFilter = (function(Arr) {
 

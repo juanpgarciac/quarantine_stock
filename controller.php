@@ -47,6 +47,40 @@ function update_product(){
         //header('Location:index.php?msg=success');
     }
 }
+
+function update_product_batch(){
+    //dd($_GET);
+    $new_stock = $_GET['new_stock'];
+    $current_stock = $_GET['current_stock'];
+    $date = filter_input(INPUT_GET,'date')?"'".filter_input(INPUT_GET,'date')."'":'now()';
+    $observation = filter_input(INPUT_GET,'observation')??'Adjusment';
+    $type = filter_input(INPUT_GET,'type')??1;
+    global $connection;
+    foreach ($current_stock as $product_id => $current_amount) {
+        $new_amount = $new_stock[$product_id];
+
+        $amount = (float)($new_amount - $current_amount);
+        $errors=[];
+        $success =[];
+        if($amount != 0){
+            $query = "insert into stock(product_id,amount,date,observation) values($product_id,'$amount',$date,'$observation');";
+            $r = mysqli_query($connection,$query);
+            if(!$r){
+                $errors[] = $product_id;
+            }else{
+                $success[] =$product_id;
+            }
+        }else{
+
+        }
+    }
+    if(count($errors)>0)
+        var_dump($errors);
+    else{
+        header('Location:index.php?msg=success&updated='.implode(',',$success));
+    }
+}
+
 function delete_product(){
     $product_id = filter_input(INPUT_GET,'product_id');
     global $connection;
