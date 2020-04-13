@@ -1,6 +1,6 @@
 var LightTableFilter;
 String.prototype.removeAccents = function(){
-    return this
+    return this.toString()
 			.replace(/[áàãâä]/gi,"a")
 			.replace(/[éè¨ê]/gi,"e")
 			.replace(/[íìïî]/gi,"i")
@@ -9,7 +9,7 @@ String.prototype.removeAccents = function(){
 			.replace(/[ç]/gi, "c")
 			.replace(/[ñ]/gi, "n")
 			.replace(/[^a-zA-Z0-9]/g," ");
-   }
+   };
 (function(document) {
     'use strict';
 

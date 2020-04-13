@@ -39,7 +39,11 @@ include "index_controller.php";
 			}
 			table td.out2{
 				background: #fcd9e0;
-			}			
+			}	
+
+			table, th, td {
+				border: 1px solid black;
+			}		
 		</style>
 	</head>
 	<body style="max-width:80%;">

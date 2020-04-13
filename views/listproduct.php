@@ -9,10 +9,10 @@
         <button type="submit">Update stock</button>
         <button type="reset">Cancel</button>
         <br>
-    <input id="table_filter" type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
+        <input id="table_filter" type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
     <?php }?>
     <section class="container" <?php echo !$print?'style="max-height: 250px;overflow-y: auto;"':''; ?> >
-        <table id="order_table" class="order-table table" border="1" >
+        <table id="order_table" class="order-table table" >
             <thead>
                 <tr>
                     <th>ID</th>

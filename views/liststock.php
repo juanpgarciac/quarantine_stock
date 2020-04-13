@@ -2,7 +2,7 @@
 <h2>Stock history (Last 50 movements)</h2>
 <div >
     <section class="" style="max-height: 250px;overflow-y: auto;" >
-    <table class="order-table table" border="1" >
+    <table class="order-table table" >
         <thead>
             <tr>
                 <th>ID</th>
