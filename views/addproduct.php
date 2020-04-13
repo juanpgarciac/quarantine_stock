@@ -12,7 +12,8 @@
 							<option value="und">und</option>
 							<option value="gr">gr</option>					
 							<option value="Kg">Kg</option>
-							<option value="ml">ml</option>					
+							<option value="ml">ml</option>
+							<option value="lt">lt</option>					
 						</select>
 					</td>
 					<td>
@@ -20,7 +21,10 @@
 						<select name="category" id="product_category" require>
 							<option value="Bebidas">Bebidas</option>
 							<option value="Carbohidratos">Carbohidratos</option>
-							<option value="Condimentos">Condimentos</option>
+							<option value="Chucherias">Chucherias</option>
+							<option value="Condimentos">Condimentos</option>							
+							<option value="Enlatados">Enlatados</option>
+							<option value="Higiene">Higiene</option>
 							<option value="Frutos secos">Frutos secos</option>
 							<option value="Galletas">Galletas</option>
 							<option value="Granos/Cereales">Granos/Cereales</option>
