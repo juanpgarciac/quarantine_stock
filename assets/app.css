@@ -3,7 +3,40 @@
 * {
     font-family:  'Open Sans',sans-serif;
 }
+.select{
+    max-width: 100% !important;
+}
+header{
+    position: fixed;
+    top: 0;				
+    width: 100%;
+    /* height: 70px; */				
+}
+header div{
+    padding: 0 20px;
+    float:right;
+    background: #fff;
+}
+header pre{
+    font-size: small;
+    font-weight:bold;
+}	
+table td.in{
+    background: green;
+}
+table td.out{
+    background: red;
+}
+table td.in2{
+    background: #bbffb3;
+}
+table td.out2{
+    background: #fcd9e0;
+}	
 
+table, th, td {
+    border: 1px solid black;
+}
 /* Please give style to this project */
 
 

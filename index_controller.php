@@ -57,3 +57,37 @@
 		"<td>{$row['observation']} </td>".
 		"</tr>";
 	}
+
+	//Replace with DB table ? 
+	$units = [
+		'und','gr','Kg','ml','lt',
+	];
+	$units_options = [];
+	foreach ($units as $unit) {
+		$units_options[] = "<option value=\"{$unit}\">{$unit}</option>";
+	}
+
+	//Replace with DB table ? 
+	$categories = [
+		'Bebidas',
+		'Carbohidratos',
+		'Charcuteria',
+		'Chucherias',
+		'Cocina/Hogar',
+		'Condimentos',
+		'Enlatados',
+		'Higiene',
+		'Frutos secos',
+		'Galletas',
+		'Granos/Cereales',
+		'Grasas',
+		'Otros',
+		'Proteinas',
+		'Salsas',
+	];
+
+	sort($categories);
+	$categories_options = [];
+	foreach ($categories as $category) {
+		$categories_options[] = "<option value=\"{$category}\">{$category}</option>";
+	}

@@ -9,29 +9,13 @@
 					<td><input type="number" name="presentation" value="1" id="product_presentation" required></td>
 					<td>
 						<select name="unit" id="product_unit" required>
-							<option value="und">und</option>
-							<option value="gr">gr</option>					
-							<option value="Kg">Kg</option>
-							<option value="ml">ml</option>
-							<option value="lt">lt</option>					
+							<?php echo implode("",$units_options); ?>
 						</select>
 					</td>
 					<td>
 						<!-- This is the harcoded categories select, you can improve it with a table or something else -->
 						<select name="category" id="product_category" required>
-							<option value="Bebidas">Bebidas</option>
-							<option value="Carbohidratos">Carbohidratos</option>
-							<option value="Chucherias">Chucherias</option>
-							<option value="Condimentos">Condimentos</option>							
-							<option value="Enlatados">Enlatados</option>
-							<option value="Higiene">Higiene</option>
-							<option value="Frutos secos">Frutos secos</option>
-							<option value="Galletas">Galletas</option>
-							<option value="Granos/Cereales">Granos/Cereales</option>
-							<option value="Grasas">Grasas</option>
-							<option value="Otros">Otros</option>
-							<option value="Proteinas">Proteinas</option>							
-							<option value="Salsas">Salsas</option>
+							<?php echo implode("",$categories_options); ?>
 						</select>
 					</td>
 					<td><input type="number" name="initial_stock" id="initial_stock" step="0.1" value="0.00" min="0"></td>	

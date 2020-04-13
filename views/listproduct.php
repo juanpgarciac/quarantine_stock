@@ -16,8 +16,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>product</th>
-                    <th>presentation</th>
+                    <th>Product</th>
+                    <th>Presentation</th>
                     <th>Unit</th>
                     <th>Category</th>
                     <th>Stock</th>
