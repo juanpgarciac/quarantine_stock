@@ -29,11 +29,17 @@ include "index_controller.php";
 				color:<?php echo $debug_color?>
 			}
 			table td.in{
-				background: #bbffb3;
+				background: green;
 			}
 			table td.out{
-				background: #fcd9e0;
+				background: red;
 			}
+			table td.in2{
+				background: #bbffb3;
+			}
+			table td.out2{
+				background: #fcd9e0;
+			}			
 		</style>
 	</head>
 	<body style="max-width:80%;">

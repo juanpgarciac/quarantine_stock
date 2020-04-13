@@ -46,7 +46,7 @@
 			$sign = '';
 			$class = '';
 		}else{
-			$class= ($row['amount']>0)?'in':'out';
+			$class= ($row['amount']>0)?'in2':'out2';
 			$sign = ($row['amount']>0)?'+':'';
 		}
 		$product_stock[] = $row;
