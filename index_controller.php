@@ -18,6 +18,10 @@
 		}else{
 			$left = 'out';
 		}
+
+		$step_type_1 = '0.1';
+		$step_type_2 = '1';
+		$step_type = (in_array($row['unit'],['Kg','lt'])?$step_type_1:$step_type_2);
 		
 		$products[] = $row;
 		$product_select[] = "<option value=\"{$row['id']}\">{$row['name']} ({$row['presentation']} {$row['unit']}) < {$left} </option>";
@@ -30,7 +34,7 @@
 		"<td>{$row['category']}</td>".
 		"<td class=\"$class\">
 		<input  type=\"hidden\" value=\"{$row['available']}\" name=\"current_stock[{$row['id']}]\" />
-		<input  type=\"number\" min=\"0\" step=\"0.1\" value=\"{$row['available']}\" name=\"new_stock[{$row['id']}]\"/></td>".
+		<input  type=\"number\" min=\"0\" id=\"step_{$row['id']}\" step=\"{$step_type}\" value=\"{$row['available']}\" name=\"new_stock[{$row['id']}]\"/></td>".
 		(!$print?"<td>". 
 		"<a href=\"javascript:edit_product({$row['id']},'{$row['name']}','{$row['presentation']}','{$row['unit']}','{$row['category']}');\">Edit</a>&nbsp;|&nbsp;".
 		"<a href=\"javascript:delete_product({$row['id']},'{$row['name']}');\">Delete</a>".
