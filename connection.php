@@ -23,5 +23,5 @@ function dd(...$args){
     if(true)die();
 }
 
-$connection = mysqli_connect(env('DB_HOST'),env('DB_USERNAME'),env('DB_PASSWORD'),env('DB_NAME'),env('DB_PORT'));
+$connection = mysqli_connect(env('DB_HOST'),env('DB_USERNAME'),env('DB_PASSWORD'),env('DB_NAME'),env('DB_PORT')) or die("Error connecting DB");
 mysqli_set_charset($connection,'utf8mb4');
