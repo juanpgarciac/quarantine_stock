@@ -96,7 +96,7 @@ function delete_product()
         $query = "delete from product where id = {$product_id}";
         $r = mysqli_query($connection, $query);
         $query2 = "delete from stock where product_id = {$product_id}";
-        $r = mysqli_query($connection, $query);
+        $r = mysqli_query($connection, $query2);
         if ($r) {
             header('Location:index.php?msg=success');
         } else {
