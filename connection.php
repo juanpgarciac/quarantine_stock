@@ -1,6 +1,8 @@
 <?php 
 if(file_exists('env.php')) {
     include 'env.php';
+}else{
+    die("no env file detected");
 }
 
 if(!function_exists('env')) {
