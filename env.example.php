@@ -9,6 +9,6 @@
       'DB_PORT' => '3306',
   ];
 
-  foreach ($variables as $key => $value) {
-      putenv("$key=$value");
-  }
+foreach ($variables as $key => $value) {
+    putenv("$key=$value");
+}

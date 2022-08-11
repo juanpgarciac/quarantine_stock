@@ -3,7 +3,7 @@
 <div >
 <form action="controller.php">
     <input type="hidden" name="f" value="update_product_batch" >
-    <?php if(!$print){ ?>
+    <?php if (!$print) { ?>
         <input type="date" name="date"  value="<?php echo date('Y-m-d'); ?>" required>
         <input type="text" name="observation" placeholder="observation" value="Ajuste" required>
         <button type="submit">Update stock</button>
@@ -11,7 +11,7 @@
         <br>
         <input id="table_filter" type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
     <?php }?>
-    <section class="container" <?php echo !$print?'style="max-height: 250px;overflow-y: auto;"':''; ?> >
+    <section class="container" <?php echo !$print ? 'style="max-height: 250px;overflow-y: auto;"' : ''; ?> >
         <table id="order_table" class="order-table table" >
             <thead>
                 <tr>
@@ -21,19 +21,19 @@
                     <th>Unit</th>
                     <th>Category</th>
                     <th>Stock</th>
-                    <?php if(!$print){ ?>
+                    <?php if (!$print) { ?>
                     <th>Action</th>
                     <?php }?>
                 </tr>
             </thead>
             <tbody>
-                    <?php echo implode("",$product_rows); ?>
+                    <?php echo implode("", $product_rows); ?>
             </tbody>
         </table>
 
     </section>
     </form>
-    <?php if(!$print){ ?>
+    <?php if (!$print) { ?>
         <h4>All DB product list:</h4>
         <button onclick="window.location.href = 'export_print.php?print'" >Print</button>
         <button onclick="window.location.href = 'export_csv.php'" >Export to CSV</button>

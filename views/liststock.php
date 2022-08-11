@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-                <?php echo implode("",$product_stock_rows); ?>
+                <?php echo implode("", $product_stock_rows); ?>
         </tbody>
     </table>
     </section>

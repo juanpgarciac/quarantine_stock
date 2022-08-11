@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "connection.php";
 include "index_controller.php";
 ?>
@@ -19,14 +19,16 @@ include "index_controller.php";
 	<body style="max-width:80%;">
 		<header >
 			<div>
-				<pre>You are in <?php echo env('DEBUG')?'testing':'production';?> environment.</pre>
+				<pre>You are in <?php echo env('DEBUG') ? 'testing' : 'production';?> environment.</pre>
 				<pre>DB: <?php echo env('DB_NAME'); ?></pre>
 			</div>		
 		</header>		
 		<?php include 'views/addproduct.php';  ?>
-		<!-- <?php //include 'views/updatestock.php'; ?> -->
+		<!-- <?php //include 'views/updatestock.php';?> -->
 		<?php include 'views/listproduct.php'; ?>
-		<?php if(!$print)include 'views/liststock.php'; ?>
+		<?php if (!$print) {
+		    include 'views/liststock.php';
+		} ?>
 		<!-- <script src="assets/select.js"></script> -->
 		<script src="assets/app.js"></script>
 	</body>

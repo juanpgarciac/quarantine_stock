@@ -7,7 +7,7 @@
         <tr>
             <td style="width:40%;">
                 <select name="product_id" id="filter" style="width:100%;" required>
-                <?php echo implode("",$product_select)?>
+                <?php echo implode("", $product_select)?>
                 </select>
             </td>
             <td><input type="number" name="amount" placeholder="amount" id="" step="0.1" min="0" value="0.00" required></td>

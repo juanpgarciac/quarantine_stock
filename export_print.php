@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'connection.php';
 include 'index_controller.php';
 header('Content-Type: text/html; charset=utf-8');
